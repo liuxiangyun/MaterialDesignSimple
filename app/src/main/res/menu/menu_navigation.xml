@@ -1,0 +1,21 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_wallet"
+        android:icon="@mipmap/ic_wallet"
+        android:title="@string/my_wallet" />
+    <items
+        android:id="@+id/item_sponsor"
+        android:title="@string/sponsor" />
+    <item
+        android:id="@+id/item_collect"
+        android:title="@string/my_collect" />
+    <item
+        android:id="@+id/item_task"
+        android:title="@string/task" />
+    <item
+        android:id="@+id/item_record"
+        android:title="@string/record" />
+    <item
+        android:id="@+id/item_setting"
+        android:title="@string/setting" />
+</menu>

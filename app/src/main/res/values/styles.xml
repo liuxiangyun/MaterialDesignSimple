@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--选用无actionBar 的主题，换成Toolbar-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <!--颜色设置  可参考/src/main/doc/color.png-->
+
+        <!--状态栏颜色 只在5.0以上机器生效-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+
+        <!--主要的颜色 （Toolbar颜色有应用）-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+
+        <!--主要的文本颜色 （Toolbar文本颜色有应用）-->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+
+        <!--悬浮按钮颜色-->
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <!--界面背景颜色-->
+        <item name="android:windowBackground">@color/windowBackground</item>
+
+        <!--虚拟导航栏的颜色-->
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

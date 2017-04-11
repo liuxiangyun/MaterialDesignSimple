@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">快拍</string>
+    <string name="my_collect">关注</string>
+    <string name="my_wallet">我的钱包</string>
+    <string name="setting">设置</string>
+    <string name="record">浏览记录</string>
+    <string name="task">任务</string>
+    <string name="sponsor">赞赏</string>
+    <string name="constellation">天蝎座</string>
+    <string name="nickname">提莫队长</string>
+    <string name="introduce">我是你们尊敬的提莫队长，噩梦人机再次来袭，享受被我支配的恐惧吧。。。哈哈哈。。。哈哈哈。。。哈哈哈。。。</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="pickup">拍摄</string>
+    <string name="search">搜索</string>
+    <string name="message">消息</string>
+    <string name="all">发现</string>
+    <string name="location">同城</string>
+    <string name="attention">关注</string>
+</resources>

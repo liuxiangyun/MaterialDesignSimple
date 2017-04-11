@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccentDark">#B22D5A</color>
+    <color name="colorPrimary">#00CC88</color>
+    <color name="colorPrimaryDark">#00AA78</color>
+    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="windowBackground">#FFFFFF</color>
+    <color name="navigationBarColor">#000000</color>
+
+
+    <color name="text_color">#7C7C7C</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_alpha_hei">#99FFFFFF</color>
+    <color name="colorPrimaryDarkD">#009018</color>
+    <color name="colorPrimaryDarkDD">#006618</color>
+</resources>

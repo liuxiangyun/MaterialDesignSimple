@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--DrawerLayout 中内容布局代码放在抽屉前面-->
+    <!--CoordinatorLayout 用此布局当显示Snackbar时，FloatingActionButton会上移调整,同时可以设置滚动view，bar跟随操作，总之，该布局用来
+     实现组件之间通讯联系操作-->
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/elevation_mid"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <!--app:layout_scrollFlags="scroll|enterAlways" 设置该View随着滚动View的滚动而隐藏-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbarSize="8dp"
+                app:tabBackground="?attr/colorPrimary"
+                app:tabIndicatorColor="@android:color/white"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextColor="@color/white_alpha_hei" />
+        </android.support.design.widget.AppBarLayout>
+
+        <!--app:layout_behavior="@string/appbar_scrolling_view_behavior" 滚动的View发出滚动行为-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+        <!--backgroundTint 背景颜色，rippleColor 按压变化的颜色 ，pressedTranslationZ 按压Z轴位置位移-->
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/btn_publish"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="end|bottom"
+            android:layout_margin="@dimen/fab_margin"
+            android:elevation="@dimen/elevation_mid"
+            app:backgroundTint="@color/colorAccent"
+            app:pressedTranslationZ="@dimen/elevation_hei"
+            app:rippleColor="@color/colorAccentDark" />
+    </android.support.design.widget.CoordinatorLayout>
+
+    <!--抽屉 ，start： 抽屉在左边还是在右边根据系统语言变化而变化，从左至右（left）,从右至左（右）-->
+    <android.support.design.widget.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:elevation="@dimen/elevation_mid"
+        app:headerLayout="@layout/view_nav_header"
+        app:itemTextColor="@color/text_color"
+        app:menu="@menu/menu_navigation" />
+</android.support.v4.widget.DrawerLayout>
