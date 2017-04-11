@@ -8,5 +8,14 @@ public class WelcomeActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+        mHandler.postDelayed(this, 3000);
+    }
+
+    @Override
+    public void run() {
+        super.run();
+        MainActivity.startActivity(this);
+        finish();
     }
 }
