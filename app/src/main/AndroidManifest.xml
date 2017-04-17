@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.materialdesignsimple">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".application.MDApplication"
         android:allowBackup="true"
@@ -20,6 +22,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".VideoDetailActivity"
             android:screenOrientation="portrait" />
     </application>
 

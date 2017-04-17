@@ -15,7 +15,7 @@ public class WelcomeActivity extends BaseActivity {
     @Override
     public void run() {
         super.run();
-        MainActivity.startActivity(this);
+        MainActivity.actionStartActivity(this);
         finish();
     }
 }

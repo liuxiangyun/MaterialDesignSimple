@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import com.example.materialdesignsimple.application.ActivityController;
+import com.example.materialdesignsimple.helper.ActivityHelper;
 
 import butterknife.ButterKnife;
 
@@ -16,6 +17,7 @@ import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends AppCompatActivity implements Runnable {
     protected Handler mHandler;
+    protected ActivityHelper mActivityHelper;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,6 +25,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Runnable
         ButterKnife.bind(this);
         mHandler = new Handler();
         ActivityController.addActivity(this);
+
+        mActivityHelper = new ActivityHelper(this);
     }
 
     @Override

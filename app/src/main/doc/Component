@@ -1,0 +1,13 @@
+http://wiki.jikexueyuan.com/project/material-design/components/bottom-sheets.html
+
+Bottom Sheets
+    底部动作条(Bottom Sheets)特别适合有三个或者三个以上的操作需要提供给用户选择、并且不需要对操作有额外解释的情景。
+    如果只有两个或者更少的操作，或者需要详加描述的，可以考虑使用菜单(Menu)或者对话框替代。
+    底部动作条(Bottom Sheets)可以是列表样式的也可以是宫格样式的。
+
+Floating action button
+    悬浮响应按钮(Floating action button)， 点击后会产生墨水扩散效果的圆形按钮。
+Raised button
+    浮动按钮(Raised button)， 常见的方形纸片按钮，点击后会产生墨水扩散效果。    最小宽度: 88 dp， 高度: 36 dp
+Flat button
+    扁平按钮(Flat button)， 点击后产生墨水扩散效果，和浮动按钮的区别是没有浮起的效果。    最小宽度: 88 dp， 高度: 36 dp

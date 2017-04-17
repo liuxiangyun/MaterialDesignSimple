@@ -3,7 +3,41 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="elevation_mid">10dp</dimen>
-    <dimen name="elevation_low">5dp</dimen>
-    <dimen name="elevation_hei">15dp</dimen>
+    <dimen name="fab_wh_normal">56dp</dimen>
+    <dimen name="fab_wh_mini">40dp</dimen>
+    <dimen name="btn_w_min">88dp</dimen>
+    <dimen name="btn_h">36dp</dimen>
+
+    <!--   ************    Material Design 组件标准阴影参考  ************  -->
+    <!--应用条-->
+    <dimen name="elevation_app_bar">4dp</dimen>
+    <!--Raised button 浮动按钮-->
+    <dimen name="elevation_raised_btn_normal">2dp</dimen>
+    <dimen name="elevation_raised_btn_pressed">8dp</dimen>
+    <!--Floating action button 悬浮响应按钮-->
+    <dimen name="elevation_fab_normal">6dp</dimen>
+    <dimen name="elevation_fab_pressed">12dp</dimen>
+    <!--卡片-->
+    <dimen name="elevation_card_normal">2dp</dimen>
+    <dimen name="elevation_card_pressed">8dp</dimen>
+    <!--菜单-->
+    <dimen name="elevation_menu">8dp</dimen>
+    <!--子菜单-->
+    <dimen name="elevation_menu_child">9dp</dimen>
+    <!--对话框-->
+    <dimen name="elevation_dialog">24dp</dimen>
+    <!--导航抽屉和右抽屉-->
+    <dimen name="elevation_drawer">16dp</dimen>
+    <!--Bottom Sheets 底部单页-->
+    <dimen name="elevation_bottom_sheets">16dp</dimen>
+    <!--刷新按钮-->
+    <dimen name="elevation_srl_btn">3dp</dimen>
+    <!--快速查询/搜索条-->
+    <dimen name="elevation_search">2dp</dimen>
+    <dimen name="elevation_search_scroll">3dp</dimen>
+    <!--Snackbar-->
+    <dimen name="elevation_snackbar">6dp</dimen>
+    <!--切换按钮-->
+    <dimen name="elevation_switch_btn">1dp</dimen>
+
 </resources>

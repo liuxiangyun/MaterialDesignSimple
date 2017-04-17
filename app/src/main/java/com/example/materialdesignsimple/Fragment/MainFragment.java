@@ -10,11 +10,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.materialdesignsimple.BaseActivity;
 import com.example.materialdesignsimple.R;
 import com.example.materialdesignsimple.adapter.MyRecyclerAdapter;
+import com.example.materialdesignsimple.bean.CoverBean;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 
@@ -30,7 +33,7 @@ public class MainFragment extends BaseFragment {
     SwipeRefreshLayout mSwipeRefreshLayout;
     private String mTitle;
 
-    private List<Integer> mResIds = new ArrayList<>();
+    private List<CoverBean> mCovers = new ArrayList<>();
 
     private MyRecyclerAdapter mMyRecyclerAdapter;
 
@@ -67,8 +70,34 @@ public class MainFragment extends BaseFragment {
     }
 
     private void initData() {
+        mCovers.clear();
         for (int i = 0; i < 20; i++) {
-            mResIds.add(R.mipmap.image_card);
+            switch (new Random().nextInt(3)) {
+                case 0:
+                    CoverBean beanOne = new CoverBean();
+                    beanOne.setNickname("提莫队长");
+                    beanOne.setWidth(547);
+                    beanOne.setHeight(388);
+                    beanOne.setUrl("file:///android_asset/img_android_logo_1.png");
+                    mCovers.add(beanOne);
+                    break;
+                case 1:
+                    CoverBean beanTwo = new CoverBean();
+                    beanTwo.setNickname("影流之主");
+                    beanTwo.setWidth(640);
+                    beanTwo.setHeight(480);
+                    beanTwo.setUrl("file:///android_asset/img_android_logo_2.png");
+                    mCovers.add(beanTwo);
+                    break;
+                case 2:
+                    CoverBean beanThree = new CoverBean();
+                    beanThree.setNickname("秋名山车神");
+                    beanThree.setWidth(500);
+                    beanThree.setHeight(481);
+                    beanThree.setUrl("file///android_asset/img_android_logo_3.png");
+                    mCovers.add(beanThree);
+                    break;
+            }
         }
     }
 
@@ -78,12 +107,12 @@ public class MainFragment extends BaseFragment {
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(staggeredGridLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
-        mMyRecyclerAdapter = new MyRecyclerAdapter();
-        mMyRecyclerAdapter.addAll(mResIds);
+        mMyRecyclerAdapter = new MyRecyclerAdapter((BaseActivity) getActivity(), this);
+        mMyRecyclerAdapter.addAll(mCovers);
         mRecyclerView.setAdapter(mMyRecyclerAdapter);
         mRecyclerView.setOnScrollListener(onScrollListener);
 
-        int colors[] = {R.color.colorPrimary, R.color.colorPrimaryDark, R.color.colorPrimaryDarkD, R.color.colorPrimaryDarkDD};
+        int colors[] = {R.color.srl_btn_normal, R.color.srl_btn_dark, R.color.srl_btn_dark_d};
         mSwipeRefreshLayout.setColorSchemeResources(colors);
         mSwipeRefreshLayout.setOnRefreshListener(onRefreshListener);
     }
@@ -96,7 +125,7 @@ public class MainFragment extends BaseFragment {
         public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
             super.onScrollStateChanged(recyclerView, newState);
             if (newState == RecyclerView.SCROLL_STATE_IDLE && isScrollBottom()) {
-                mMyRecyclerAdapter.addAll(mResIds);
+                mMyRecyclerAdapter.addAll(mCovers);
                 mMyRecyclerAdapter.notifyDataSetChanged();
             }
         }
@@ -134,11 +163,11 @@ public class MainFragment extends BaseFragment {
                 @Override
                 public void run() {
                     mMyRecyclerAdapter.clear();
-                    mMyRecyclerAdapter.addAll(mResIds);
+                    mMyRecyclerAdapter.addAll(mCovers);
                     mMyRecyclerAdapter.notifyDataSetChanged();
                     mSwipeRefreshLayout.setRefreshing(false);
                 }
-            }, 5000);
+            }, (new Random().nextInt(5) + 1) * 1000);
         }
     };
 

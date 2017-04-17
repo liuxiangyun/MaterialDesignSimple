@@ -1,17 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- 样式基本色 -->
     <color name="colorAccent">#FF4081</color>
-    <color name="colorAccentDark">#B22D5A</color>
-    <color name="colorPrimary">#00CC88</color>
-    <color name="colorPrimaryDark">#00AA78</color>
+    <color name="colorAccentDark">#C51162</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#388E3C</color>
     <color name="textColorPrimary">#FFFFFF</color>
     <color name="windowBackground">#FFFFFF</color>
     <color name="navigationBarColor">#000000</color>
 
+    <!-- 白色背景使用的灰色文字 -->
+    <color name="text_grey_primary">#DE000000</color><!-- 标准 87% alpha-->
+    <color name="text_grey_light">#8A000000</color><!-- 视觉层次偏低的次要文字 54% alpha-->
+    <color name="text_grey_light_l">#42000000</color><!-- 像正文和标签中用于提示用户的文字，视觉层次更低 26% alpha-->
 
-    <color name="text_color">#7C7C7C</color>
+    <!-- SwipeRefreshLayout 刷新按钮颜色 -->
+    <color name="srl_btn_normal">#4CAF50</color>
+    <color name="srl_btn_dark">#388E3C</color>
+    <color name="srl_btn_dark_d">#185E20</color>
+
+    <!-- Raised button 悬浮按钮-->
+    <color name="ra_btn_normal">#4CAF50</color>
+    <color name="ra_btn_act">#43A047</color>
+    <color name="ra_btn_hei_light">#388E3C</color>
+
     <color name="white">#FFFFFF</color>
-    <color name="white_alpha_hei">#99FFFFFF</color>
-    <color name="colorPrimaryDarkD">#009018</color>
-    <color name="colorPrimaryDarkDD">#006618</color>
+    <color name="white_disabled">#8FFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
 </resources>

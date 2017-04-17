@@ -27,7 +27,7 @@
         android:maxLines="1"
         android:text="@string/nickname"
         android:textColor="?android:attr/textColorPrimary"
-        android:textSize="12sp" />
+        android:textSize="13sp" />
 
     <TextView
         android:id="@+id/tv_constellation"
@@ -52,5 +52,5 @@
         android:maxLines="3"
         android:text="@string/introduce"
         android:textColor="?android:attr/textColorPrimary"
-        android:textSize="12sp" />
+        android:textSize="13sp" />
 </RelativeLayout>

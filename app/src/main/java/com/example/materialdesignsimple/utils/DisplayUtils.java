@@ -6,7 +6,7 @@ import com.example.materialdesignsimple.application.MDApplication;
  * Created by xiangyun_liu on 2017/4/9.
  */
 
-public class DisplayUtil {
+public class DisplayUtils {
     private static float density;
     private static float scaledDensity;
 
