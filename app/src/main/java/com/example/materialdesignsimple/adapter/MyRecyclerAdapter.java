@@ -12,6 +12,7 @@ import com.example.materialdesignsimple.BaseActivity;
 import com.example.materialdesignsimple.R;
 import com.example.materialdesignsimple.VideoDetailActivity;
 import com.example.materialdesignsimple.bean.CoverBean;
+import com.example.materialdesignsimple.utils.DisplayUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     private BaseActivity mBaseActivity;
     private Fragment mFragment;
     private List<CoverBean> mCovers = new ArrayList<>();
+    private int mItemWidth;
 
     public void addAll(List<CoverBean> covers) {
         mCovers.addAll(covers);
@@ -39,15 +41,14 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     public MyRecyclerAdapter(BaseActivity baseActivity, Fragment fragment) {
         mFragment = fragment;
         mBaseActivity = baseActivity;
+        //根据margin和列数计算item的宽度
+        mItemWidth = (DisplayUtils.getScreenWidth() - DisplayUtils.dp2px(5) * 4) / 2;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_main_cover, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
-        if (measuredWidth < 1) {
-            measure(holder);
-        }
         return holder;
     }
 
@@ -61,26 +62,19 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
             }
         }
     };
-    private int measuredWidth;
-
-    private void measure(final MyViewHolder holder) {
-        measuredWidth = holder.mIvMainCover.getMeasuredWidth();
-        if (measuredWidth < 1)
-            measuredWidth = holder.mIvMainCover.getWidth();
-        if (measuredWidth < 1) {
-            holder.mIvMainCover.measure(0, 0);
-            measuredWidth = holder.mIvMainCover.getMeasuredWidth();
-            if (measuredWidth < 1)
-                measuredWidth = holder.mIvMainCover.getHeight();
-        }
-    }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         CoverBean item = getItem(position);
-        Glide.with(mBaseActivity).load(item.getUrl()).fitCenter()
-                .override(measuredWidth, (int) ((double) measuredWidth / item.getWidth() * item.getHeight()))
-                .into(holder.mIvMainCover);
+
+        //ImageView大小根据图片大等比例设置
+        int height = (int) ((double) mItemWidth / item.getWidth() * item.getHeight());
+        ViewGroup.LayoutParams layoutParams = holder.mIvMainCover.getLayoutParams();
+        layoutParams.width = mItemWidth;
+        layoutParams.height = height;
+        holder.mIvMainCover.setLayoutParams(layoutParams);
+
+        Glide.with(mFragment).load(item.getUrl()).placeholder(R.mipmap.ic_placeholder).override(mItemWidth, height).into(holder.mIvMainCover);
         holder.itemView.setTag(R.id.tag_bean, item);
         holder.itemView.setOnClickListener(onClickListener);
     }

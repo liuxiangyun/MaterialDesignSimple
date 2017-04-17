@@ -6,10 +6,10 @@
     android:layout_margin="5dp"
     app:cardCornerRadius="5dp">
 
+    <!-- 设置android:scaleType="fitXY" ，因为ImageView大小设置有一定误差，要保证图片一定要充满整个ImageView，并且图片不会出现裁剪闪烁-->
     <ImageView
         android:id="@+id/iv_main_cover"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
-        android:src="@mipmap/image_card" />
+        android:scaleType="fitXY" />
 </android.support.v7.widget.CardView>

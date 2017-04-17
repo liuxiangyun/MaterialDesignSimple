@@ -54,4 +54,8 @@ public class DisplayUtils {
     public static int px2sp(int pxValue) {
         return (int) (pxValue / scaledDensity + 0.5f);
     }
+
+    public static int getScreenWidth() {
+        return MDApplication.getInstance().getResources().getDisplayMetrics().widthPixels;
+    }
 }
