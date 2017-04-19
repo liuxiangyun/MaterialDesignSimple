@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.example.materialdesignsimple.Base.BaseActivity;
 import com.example.materialdesignsimple.bean.CoverBean;
 import com.example.materialdesignsimple.constant.ExtraConstant;
 import com.example.materialdesignsimple.utils.ToastUtils;
@@ -32,7 +33,7 @@ public class VideoDetailActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         mBean = (CoverBean) getIntent().getSerializableExtra(ExtraConstant.EXTRA_OBJECT_BEAN);
         if (mBean == null) {
-            ToastUtils.toast(this, R.string.error_video);
+            ToastUtils.toast(R.string.error_video);
             finish();
             return;
         }

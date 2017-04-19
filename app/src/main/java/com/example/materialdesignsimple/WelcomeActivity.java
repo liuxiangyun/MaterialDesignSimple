@@ -2,6 +2,8 @@ package com.example.materialdesignsimple;
 
 import android.os.Bundle;
 
+import com.example.materialdesignsimple.Base.BaseActivity;
+
 public class WelcomeActivity extends BaseActivity {
 
     @Override

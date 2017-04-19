@@ -2,7 +2,7 @@ package com.example.materialdesignsimple.helper;
 
 import android.view.View;
 
-import com.example.materialdesignsimple.BaseActivity;
+import com.example.materialdesignsimple.Base.BaseActivity;
 
 /**
  * Created by xiangyun_liu on 2017/4/17.

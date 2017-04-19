@@ -1,1 +1,6 @@
-<resources></resources>
+<resources>
+    <!--5.0以上系统全屏主题，继承至项目主题，设置状态栏透明-->
+    <style name="FullScreenActivity" parent="@style/AppTheme">
+        <item name="android:statusBarColor">@color/transparent</item>
+    </style>
+</resources>

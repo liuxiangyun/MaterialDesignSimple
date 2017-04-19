@@ -4,6 +4,8 @@ import com.example.materialdesignsimple.application.MDApplication;
 
 /**
  * Created by xiangyun_liu on 2017/4/9.
+ * <p>
+ * 尺寸显示相关工具类
  */
 
 public class DisplayUtils {
@@ -11,8 +13,8 @@ public class DisplayUtils {
     private static float scaledDensity;
 
     static {
-        density = MDApplication.getInstance().getResources().getDisplayMetrics().density;
-        scaledDensity = MDApplication.getInstance().getResources().getDisplayMetrics().scaledDensity;
+        density = MDApplication.getMDApplicationContext().getResources().getDisplayMetrics().density;
+        scaledDensity = MDApplication.getMDApplicationContext().getResources().getDisplayMetrics().scaledDensity;
     }
 
     /**
@@ -55,7 +57,12 @@ public class DisplayUtils {
         return (int) (pxValue / scaledDensity + 0.5f);
     }
 
+    /**
+     * 获取屏幕宽度
+     *
+     * @return
+     */
     public static int getScreenWidth() {
-        return MDApplication.getInstance().getResources().getDisplayMetrics().widthPixels;
+        return MDApplication.getMDApplicationContext().getResources().getDisplayMetrics().widthPixels;
     }
 }

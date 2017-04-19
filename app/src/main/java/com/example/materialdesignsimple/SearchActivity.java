@@ -3,6 +3,8 @@ package com.example.materialdesignsimple;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.materialdesignsimple.Base.BaseActivity;
+
 public class SearchActivity extends BaseActivity {
 
     public static void actionStartActivity(BaseActivity activity) {

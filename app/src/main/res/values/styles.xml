@@ -45,4 +45,6 @@
         <item name="android:layout_height">36dp</item>
         <item name="android:minWidth">88dp</item>
     </style>
+    <!--5.0以下系统无statusBarColor属性，不能全屏-->
+    <style name="FullScreenActivity" parent="@style/AppTheme"></style>
 </resources>

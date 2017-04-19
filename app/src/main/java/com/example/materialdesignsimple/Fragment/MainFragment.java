@@ -10,7 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.materialdesignsimple.BaseActivity;
+import com.example.materialdesignsimple.Base.BaseActivity;
 import com.example.materialdesignsimple.R;
 import com.example.materialdesignsimple.adapter.MyRecyclerAdapter;
 import com.example.materialdesignsimple.bean.CoverBean;

@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
-import com.example.materialdesignsimple.BaseActivity;
+import com.example.materialdesignsimple.Base.BaseActivity;
 import com.example.materialdesignsimple.R;
 import com.example.materialdesignsimple.VideoDetailActivity;
 import com.example.materialdesignsimple.bean.CoverBean;

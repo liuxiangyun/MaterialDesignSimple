@@ -8,24 +8,32 @@
     <!--DrawerLayout 中内容布局代码放在抽屉前面-->
     <!--CoordinatorLayout 用此布局当显示Snackbar时，FloatingActionButton会上移调整,同时可以设置滚动view，bar跟随操作，总之，该布局用来
      实现组件之间通讯联系操作-->
+    <!--帧布局-->
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--线性布局-->
         <android.support.design.widget.AppBarLayout
             android:id="@+id/app_bar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-            <!--app:layout_scrollFlags="scroll|enterAlways" 设置该View随着滚动View的滚动而隐藏-->
+            <!--  app:layout_scrollFlags="scroll|enterAlways|snap"
+                        scroll：上滑Toolbar隐藏
+                        enterAlways：下滑Toolbar显示
+                        snap:当Toolbar不完全显示或隐藏时，自动判断是显示还是隐藏
+                        enterAlwaysCollapsed:下滑显示Toolbar的minHeight,列表滑到顶部，在下拉完全显示
+                        exitUntilCollapsed：Toolbar折叠在顶端
+            -->
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                app:layout_scrollFlags="scroll|enterAlways"
+                app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
             <android.support.design.widget.TabLayout
