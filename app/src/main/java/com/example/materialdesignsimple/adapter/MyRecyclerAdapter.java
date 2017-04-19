@@ -88,6 +88,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         return mCovers.size();
     }
 
+    public List<CoverBean> getAll() {
+        return mCovers;
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.iv_main_cover)
         ImageView mIvMainCover;

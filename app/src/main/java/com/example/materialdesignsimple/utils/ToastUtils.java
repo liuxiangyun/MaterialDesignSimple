@@ -11,11 +11,19 @@ import com.example.materialdesignsimple.application.MDApplication;
  */
 
 public class ToastUtils {
-    public static final void toast(String msg) {
-        Toast.makeText(MDApplication.getMDApplicationContext(), msg, Toast.LENGTH_SHORT);
+    public static final void shortToast(String msg) {
+        Toast.makeText(MDApplication.getMDApplicationContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
-    public static final void toast(int resId) {
-        Toast.makeText(MDApplication.getMDApplicationContext(), resId, Toast.LENGTH_SHORT);
+    public static final void shortToast(int resId) {
+        Toast.makeText(MDApplication.getMDApplicationContext(), resId, Toast.LENGTH_SHORT).show();
+    }
+
+    public static final void longToast(String msg) {
+        Toast.makeText(MDApplication.getMDApplicationContext(), msg, Toast.LENGTH_LONG).show();
+    }
+
+    public static final void longToast(int resId) {
+        Toast.makeText(MDApplication.getMDApplicationContext(), resId, Toast.LENGTH_LONG).show();
     }
 }

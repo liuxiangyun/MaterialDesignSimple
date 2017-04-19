@@ -31,9 +31,9 @@ public class VideoDetailActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_video_detail);
         super.onCreate(savedInstanceState);
-        mBean = (CoverBean) getIntent().getSerializableExtra(ExtraConstant.EXTRA_OBJECT_BEAN);
+        mBean = getIntent().getParcelableExtra(ExtraConstant.EXTRA_OBJECT_BEAN);
         if (mBean == null) {
-            ToastUtils.toast(R.string.error_video);
+            ToastUtils.shortToast(R.string.error_video);
             finish();
             return;
         }
