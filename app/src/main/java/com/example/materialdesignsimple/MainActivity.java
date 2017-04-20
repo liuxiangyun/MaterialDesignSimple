@@ -116,32 +116,25 @@ public class MainActivity extends BaseActivity {
         }
     };
 
-    private final View.OnClickListener onNavigationClickListener = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            if (mIsDrawerOpen) {
-                //关闭指定抽屉
-                mDrawerLayout.closeDrawer(GravityCompat.START);
-            } else {
-                //打开指定抽屉
-                mDrawerLayout.openDrawer(GravityCompat.START);
-            }
+    private final View.OnClickListener onNavigationClickListener = v -> {
+        if (mIsDrawerOpen) {
+            //关闭指定抽屉
+            mDrawerLayout.closeDrawer(GravityCompat.START);
+        } else {
+            //打开指定抽屉
+            mDrawerLayout.openDrawer(GravityCompat.START);
         }
     };
 
-    private final View.OnClickListener onPublishClickListener = new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-            //第一个View传入CoordinatorLayout布局或其子布局，根据子布局就会找到CoordinatorLayout布局，当显示Snackbar时该布局上的FloatingActionButton会上移调整
-            final Snackbar snackbar = Snackbar.make(mBtnPublish, "确定拍摄视频?", Snackbar.LENGTH_LONG);
-            snackbar.setAction("取消", new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    snackbar.dismiss();
-                }
-            }).show();
-        }
+    private final View.OnClickListener onPublishClickListener = v -> {
+        //第一个View传入CoordinatorLayout布局或其子布局，根据子布局就会找到CoordinatorLayout布局，当显示Snackbar时该布局上的FloatingActionButton会上移调整
+        final Snackbar snackbar = Snackbar.make(mBtnPublish, "确定拍摄视频?", Snackbar.LENGTH_LONG);
+        snackbar.setAction("取消", new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                snackbar.dismiss();
+            }
+        }).show();
     };
 
     @Override

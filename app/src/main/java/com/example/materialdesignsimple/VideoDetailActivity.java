@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.materialdesignsimple.Base.BaseActivity;
@@ -18,6 +19,8 @@ public class VideoDetailActivity extends BaseActivity {
     Toolbar mToolbar;
     @BindView(R.id.iv_cover)
     ImageView mIvCover;
+    @BindView(R.id.tv)
+    TextView mTv;
 
     private CoverBean mBean;
 
@@ -47,5 +50,10 @@ public class VideoDetailActivity extends BaseActivity {
         getSupportActionBar().setTitle(mBean.getNickname());
         mToolbar.setNavigationOnClickListener(mActivityHelper.onBackClickListener);
         Glide.with(this).load(mBean.getUrl()).into(mIvCover);
+
+        mTv.setText(mBean.getNickname());
+        for (int i = 0; i <= 6; i++) {
+            mTv.setText(mTv.getText().toString() + mTv.getText().toString());
+        }
     }
 }

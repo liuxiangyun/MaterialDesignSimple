@@ -52,14 +52,10 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         return holder;
     }
 
-    private final View.OnClickListener onClickListener = new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-            Object obj = v.getTag(R.id.tag_bean);
-            if (obj != null && obj instanceof CoverBean) {
-                VideoDetailActivity.actionStartActivity(mBaseActivity, (CoverBean) obj);
-            }
+    private final View.OnClickListener onClickListener = v -> {
+        Object obj = v.getTag(R.id.tag_bean);
+        if (obj != null && obj instanceof CoverBean) {
+            VideoDetailActivity.actionStartActivity(mBaseActivity, (CoverBean) obj);
         }
     };
 

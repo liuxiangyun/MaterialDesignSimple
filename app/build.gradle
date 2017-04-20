@@ -1,33 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
-
-android {
-    signingConfigs {
-        release {
-            keyAlias 'MaterialDesign'
-            keyPassword '12345678'
-            storeFile file('E:/liuxiangyun/keystore.jks')
-            storePassword '12345678'
-        }
-    }
-    compileSdkVersion 24
-    buildToolsVersion "25.0.2"
-    defaultConfig {
-        applicationId "com.example.materialdesignsimple"
-        minSdkVersion 14
-        targetSdkVersion 24
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
-        }
-    }
-}
+apply plugin: 'me.tatarka.retrolambda'
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -50,3 +23,57 @@ dependencies {
     //Glide 图片加载
     compile 'com.github.bumptech.glide:glide:3.7.0'
 }
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "25.0.2"
+
+    defaultConfig {
+        applicationId "com.example.materialdesignsimple"
+        minSdkVersion 14
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            keyAlias alias
+            keyPassword aliasPwd
+            storeFile file(storePath)
+            storePassword storePwd
+        }
+    }
+
+    buildTypes {
+        release {
+            //开启混淆
+            minifyEnabled false
+            //对齐zip
+            zipAlignEnabled true
+            //删除无用资源
+            shrinkResources true
+            //是否debug
+            debuggable false
+            //版本命名后缀
+            versionNameSuffix "_release"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        debug {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            debuggable true
+            versionNameSuffix "_debug"
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+

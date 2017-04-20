@@ -15,12 +15,6 @@ public class ActivityHelper {
         mActivity = activity;
     }
 
+    public final View.OnClickListener onBackClickListener = v -> mActivity.finish();
 
-    public final View.OnClickListener onBackClickListener = new View.OnClickListener() {
-
-        @Override
-        public void onClick(View v) {
-            mActivity.finish();
-        }
-    };
 }
