@@ -4,11 +4,16 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--Android 7.0及以上系统，APP默认支持多窗口模式，如要禁止多窗口模式，设置resizeableActivity为false即可；
+     不过此属性只在targetSdkVersion>=24才有效，如低于目标版本低于7.0，依然能进入多窗口模式界面，解决方法
+     为设置主activity不能改变尺寸(可以是横竖屏限制)
+     -->
     <application
         android:name=".application.MDApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:resizeableActivity="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
@@ -16,7 +21,6 @@
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
