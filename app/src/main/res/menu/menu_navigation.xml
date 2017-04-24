@@ -3,19 +3,24 @@
         android:id="@+id/item_wallet"
         android:icon="@mipmap/ic_wallet"
         android:title="@string/my_wallet" />
-    <items
-        android:id="@+id/item_sponsor"
-        android:title="@string/sponsor" />
+    <item
+        android:id="@+id/item_reward"
+        android:icon="@mipmap/ic_reward"
+        android:title="@string/reward" />
     <item
         android:id="@+id/item_collect"
+        android:icon="@mipmap/ic_collect"
         android:title="@string/my_collect" />
     <item
         android:id="@+id/item_task"
+        android:icon="@mipmap/ic_task"
         android:title="@string/task" />
     <item
-        android:id="@+id/item_record"
-        android:title="@string/record" />
+        android:id="@+id/item_browsing_history"
+        android:icon="@mipmap/ic_browsing_history"
+        android:title="@string/browsing_history" />
     <item
         android:id="@+id/item_setting"
+        android:icon="@mipmap/ic_setting"
         android:title="@string/setting" />
 </menu>

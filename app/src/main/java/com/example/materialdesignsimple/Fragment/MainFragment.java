@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.materialdesignsimple.Base.BaseActivity;
+import com.example.materialdesignsimple.Base.BaseFragment;
 import com.example.materialdesignsimple.R;
 import com.example.materialdesignsimple.adapter.MyRecyclerAdapter;
 import com.example.materialdesignsimple.bean.CoverBean;
@@ -60,12 +61,20 @@ public class MainFragment extends BaseFragment {
         }
     }
 
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.fragment_main;
+    }
+
+    @Override
+    protected void init() {
+        initView();
+    }
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mContentView = inflater.inflate(R.layout.fragment_main, container, false);
         super.onCreateView(inflater, container, savedInstanceState);
-        initView();
         return mContentView;
     }
 
@@ -115,7 +124,7 @@ public class MainFragment extends BaseFragment {
         总是会觉得有点不妥当。*/
 
     private void initView() {
-        mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+        mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
         //RecyclerView滑动过程中不断请求layout的Request，不断调整item见的间隙，
         // 并且是在item尺寸显示前预处理，因此用此代码解决RecyclerView滑动到顶部时出现移动问题
         mStaggeredGridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
@@ -123,13 +132,14 @@ public class MainFragment extends BaseFragment {
         mRecyclerView.setLayoutManager(mStaggeredGridLayoutManager);
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         mMyRecyclerAdapter = new MyRecyclerAdapter((BaseActivity) getActivity(), this);
-        mMyRecyclerAdapter.addAll(getData());
         mRecyclerView.setAdapter(mMyRecyclerAdapter);
         mRecyclerView.addOnScrollListener(onScrollListener);
 
         int colors[] = {R.color.srl_btn_normal, R.color.srl_btn_dark, R.color.srl_btn_dark_d};
         mSwipeRefreshLayout.setColorSchemeResources(colors);
         mSwipeRefreshLayout.setOnRefreshListener(onRefreshListener);
+        mSwipeRefreshLayout.setRefreshing(true);
+        onRefreshListener.onRefresh();
     }
 
     /**
@@ -177,14 +187,11 @@ public class MainFragment extends BaseFragment {
     private final SwipeRefreshLayout.OnRefreshListener onRefreshListener = new SwipeRefreshLayout.OnRefreshListener() {
         @Override
         public void onRefresh() {
-            mHandler.postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    mMyRecyclerAdapter.clear();
-                    mMyRecyclerAdapter.addAll(getData());
-                    mMyRecyclerAdapter.notifyDataSetChanged();
-                    mSwipeRefreshLayout.setRefreshing(false);
-                }
+            mHandler.postDelayed(() -> {
+                mMyRecyclerAdapter.clear();
+                mMyRecyclerAdapter.addAll(getData());
+                mMyRecyclerAdapter.notifyDataSetChanged();
+                mSwipeRefreshLayout.setRefreshing(false);
             }, (new Random().nextInt(5) + 1) * 1000);
         }
     };

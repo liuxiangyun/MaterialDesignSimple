@@ -34,7 +34,8 @@
 
     <style name="RaisedButton" parent="@style/Widget.AppCompat.Button">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">36dp</item>
         <item name="android:minWidth">88dp</item>
         <item name="colorButtonNormal">@color/ra_btn_normal</item>
     </style>
@@ -42,7 +43,8 @@
     <!-- 扁平按钮样式-->
     <style name="FlatButton" parent="@style/Widget.AppCompat.Button.Borderless">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">36dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">36dp</item>
         <item name="android:minWidth">88dp</item>
     </style>
     <!--5.0以下系统无statusBarColor属性，不能全屏-->

@@ -56,5 +56,4 @@ public class MainFragmentAdapter extends FragmentPagerAdapter {
     public int getCount() {
         return mFragments.size();
     }
-
 }

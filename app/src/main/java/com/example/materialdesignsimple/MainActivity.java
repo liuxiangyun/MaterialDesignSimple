@@ -33,14 +33,18 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.view_pager)
     ViewPager mViewPager;
 
-    //变形菜单
+    /**
+     * 变形菜单
+     */
     private MaterialMenuDrawable mMaterialMenu;
-    //抽屉状态
+    /**
+     * 抽屉状态
+     */
     private boolean mIsDrawerOpen;
 
     private MainFragmentAdapter mMainFragmentAdapter;
 
-    public static void actionStartActivity(BaseActivity activity) {
+    public static final void actionStartActivity(BaseActivity activity) {
         Intent intent = new Intent(activity, MainActivity.class);
         activity.startFadeActivity(intent);
     }
@@ -150,6 +154,7 @@ public class MainActivity extends BaseActivity {
                 SearchActivity.actionStartActivity(this);
                 break;
             case R.id.item_message:
+                MessageActivity.actionStartActivity(this);
                 break;
         }
 

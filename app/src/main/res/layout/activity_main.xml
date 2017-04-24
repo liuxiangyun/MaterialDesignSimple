@@ -40,9 +40,10 @@
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbarSize="8dp"
+                android:scrollbarSize="2dp"
                 app:tabBackground="?attr/colorPrimary"
-                app:tabIndicatorColor="@android:color/white"
+                app:tabIndicatorColor="@color/fab_bg_yellow"
+                app:tabMode="fixed"
                 app:tabSelectedTextColor="@color/white"
                 app:tabTextColor="@color/white_disabled" />
         </android.support.design.widget.AppBarLayout>

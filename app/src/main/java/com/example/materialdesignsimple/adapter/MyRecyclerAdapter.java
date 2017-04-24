@@ -42,7 +42,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         mFragment = fragment;
         mBaseActivity = baseActivity;
         //根据margin和列数计算item的宽度
-        mItemWidth = (DisplayUtils.getScreenWidth() - DisplayUtils.dp2px(5) * 4) / 2;
+        mItemWidth = (DisplayUtils.getScreenWidth() - DisplayUtils.dp2px(5) * 2);
     }
 
     @Override
@@ -82,10 +82,6 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     @Override
     public int getItemCount() {
         return mCovers.size();
-    }
-
-    public List<CoverBean> getAll() {
-        return mCovers;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
