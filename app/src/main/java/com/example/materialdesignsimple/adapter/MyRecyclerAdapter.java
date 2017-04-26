@@ -62,6 +62,8 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         CoverBean item = getItem(position);
+        holder.itemView.setTag(R.id.tag_bean, item);
+        holder.itemView.setOnClickListener(onClickListener);
 
         //ImageView大小根据图片大等比例设置
         int height = (int) ((double) mItemWidth / item.getWidth() * item.getHeight());
@@ -69,10 +71,7 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.My
         layoutParams.width = mItemWidth;
         layoutParams.height = height;
         holder.mIvMainCover.setLayoutParams(layoutParams);
-
         Glide.with(mFragment).load(item.getUrl()).placeholder(R.mipmap.ic_placeholder).override(mItemWidth, height).into(holder.mIvMainCover);
-        holder.itemView.setTag(R.id.tag_bean, item);
-        holder.itemView.setOnClickListener(onClickListener);
     }
 
     public CoverBean getItem(int position) {

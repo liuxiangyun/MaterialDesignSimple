@@ -42,6 +42,10 @@ public abstract class BaseActivity extends AppCompatActivity implements Runnable
         }
     }
 
+    public Handler getHandler() {
+        return mHandler;
+    }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
